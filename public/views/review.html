@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+        		<div class="col-sm-4" ng-repeat="m in moviList | filter : {Status:'true'}">
+					<div>
+          			<center>
+							<img src="{{m.moviPoster}}" alt="POSTER"   width="255" height="230">
+					</center>
+    				</div>
+
+          		<div class="span4">
+        		<center><strong><p>{{m.moviTitle}}</p></strong><br></center>
+
+				</div>
+					<br>
+				<center>
+				<div>
+	   				 <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+
+	    			<span class="label" ng-class="{'label-warning': percent<1, 'label-info': percent>=3 && percent<7, 'label-success': percent>=7}" ng-show="overStar && !isReadonly"></span>
+				</div>
+				</center>
+
+				<center>
+					<button class="btn btn-primary glyphicon glyphicon-ok" type="button" name="button" ng-click="insertRatingValue(m.moviTitle,rate)">Rate Movie</button>
+				</center>
+				<hr>
+			</div>
+		</div>
+			<div class="row">
+				<div class="col-sm-4" ng-repeat="v in ratingList">
+					<center>
+						<p>Avg.Rating-{{v.AverageRating}} <span class="glyphicon glyphicon-heart" style="color:red;"></span></p>
+						</center>
+				</div>
+			</div>
+				<hr>
+		</div>
+	</div>
+</div>

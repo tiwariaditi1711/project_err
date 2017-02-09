@@ -1,0 +1,40 @@
+<div>
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Movie </th>
+                    <th>Year</th>
+                    <th>Actors</th>
+                    <th>Director</th>
+                    <th>Language</th>
+                    <th>Genre</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+
+                    <td><input ng-model="movi.moviTitle" /></td>
+                    <td><input ng-model="movi.moviYear"/></td>
+
+                    <td><button ng-click="addMovie(movi)" class="btn btn-primary">Add </button></td>
+
+
+                </tr>
+                <tr ng-repeat=" movi in moviList">
+
+                    <td>{{movi.moviTitle}}</td>
+                    <td>{{movi.moviYear}}</td>
+                    <td>{{movi.moviActors}}</td>
+                    <td>{{movi.moviDirector}}</td>
+                    <td>{{movi.moviLanguage}}</td>
+                    <td>{{movi.moviGenre}}</td>
+                    <td><img src="{{movi.moviPoster}}" height="150" width="150"></td>
+
+                    <td><button ng-click="removeMovie(movi)" class="btn btn-danger">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
